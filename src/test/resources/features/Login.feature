@@ -1,5 +1,6 @@
 Feature: Login
 
+  @NoLogin
   Scenario Outline: We will Test Login Scenarios with wrong username formats
     Given User is at Login Page
     When User enters username as "<Username>"
@@ -12,7 +13,7 @@ Feature: Login
       |@bc       |
       |ab.com    |
 
-  @JIRA-123 @JIRA-456
+  @NoLogin @NoPassword
   Scenario Outline: We will Test Login Scenarios with blank password
     Given User is at Login Page
     When User enters username as "<Username>"
@@ -24,7 +25,7 @@ Feature: Login
       |test@chainsys.com |
       |test@             |
 
-  @JIRA-123
+  @NoLogin @WrongCreds
   Scenario Outline: We will Test Login Scenarios with incorrect username and password
     Given User is at Login Page
     When User enters username as "<Username>"
@@ -36,7 +37,7 @@ Feature: Login
       |test@chainsys.com |psswrd3
       |test10@chainsys.com |psswrd
 
-  @JIRA-456
+ @LoggedIn
   Scenario Outline: We will Test Login Scenarios with correct username and password
     Given User is at Login Page
     When User enters username as "<Username>"

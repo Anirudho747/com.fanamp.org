@@ -10,6 +10,8 @@ import org.openqa.selenium.WebDriver;
 import io.cucumber.java.After;
 import util.DriverFactory;
 
+import java.time.Duration;
+
 
 public class LoginCases {
 
@@ -59,6 +61,7 @@ public class LoginCases {
     @Then("User should get a Toast notification")
     public void user_should_get_a_toast_notification() {
         lf.tapLogin_withCorrectEmailFormat();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
         lf.isToastPresent();
     }
 
@@ -68,10 +71,10 @@ public class LoginCases {
         System.out.println(driver.getTitle());
     }
 
-    @After(order=0)
-    public void tearDown()
-    {
-        driver.close();
-    }
+//    @After(order=0)
+//    public void tearDown()
+//    {
+//        driver.close();
+//    }
 
     }

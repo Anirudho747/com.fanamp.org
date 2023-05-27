@@ -4,7 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.CacheLookup;
 
-public class LoginPage {
+public class LoginScreen {
 
     @FindBy(id="email")
     @CacheLookup
@@ -30,7 +30,7 @@ public class LoginPage {
     @CacheLookup
     protected WebElement wrongEmailFormatPrompt;
 
-    @FindBy(xpath="//div[@class='Toastify__toast Toastify__toast-theme--light Toastify__toast--default']")
+    @FindBy(xpath="//*[text()='Error']")
     @CacheLookup
     protected WebElement toast;
 }

@@ -3,10 +3,10 @@ package flow;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
-import screen.LoginPage;
+import screen.LoginScreen;
 
 
-public class LoginFlow extends LoginPage {
+public class LoginFlow extends LoginScreen {
 
     public  WebDriver driver;
 
