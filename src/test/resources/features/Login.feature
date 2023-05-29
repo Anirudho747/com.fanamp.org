@@ -37,6 +37,30 @@ Feature: Login
       |test@chainsys.com |psswrd3
       |test10@chainsys.com |psswrd
 
+  @ForgotPassword_ValidEmailAddress
+  Scenario Outline: We will Test Validation messages in Forgot Password Screen
+    Given User is at Login Page
+    When User taps Forgot Password
+    And User enters email Address as "<Email>"
+    And hits the enter button
+    Then User should be getting proper response
+
+    Examples:
+      |Email |
+      |anirudho@auberginesolutions.com |
+
+  @ForgotPassword_InvalidEmailAddress
+  Scenario Outline: We will Test Validation messages in Forgot Password Screen
+    Given User is at Login Page
+    When User taps Forgot Password
+    And User enters email Address as "<Email>"
+    And hits the enter button
+    Then User should not be getting proper response
+
+    Examples:
+      |Email |
+      |abc@gmail.com |
+
  @LoggedIn
   Scenario Outline: We will Test Login Scenarios with correct username and password
     Given User is at Login Page
@@ -46,4 +70,4 @@ Feature: Login
 
     Examples:
       |Username     |Password        |Title
-      |anirudho@auberginesolutions.com |Gmail@2022    |Title
+      |anirudho@auberginesolutions.com |Gmail@2023    |Title

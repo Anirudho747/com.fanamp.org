@@ -7,7 +7,7 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		//ideally for features we should just mention the folder name and control execution via tags, but we can mention individual file as well
-		        features = {"src/test/resources/features/Login.feature"},
+		        features = {"src/test/resources/features/Notification_Buttons.feature"},
 				glue = {"stepDefinition"},
 		        plugin= {
 				"pretty",
@@ -15,7 +15,7 @@ import io.cucumber.junit.CucumberOptions;
 				"json:json/Report.json",
 				"junit:junit/Report.xml",
 		         },
-			//	 tags="@WrongCreds",
+//		         tags=" @ForgotPassword_InvalidEmailAddress",
 		         monochrome = false,
 		         dryRun = false,
 		         publish = true

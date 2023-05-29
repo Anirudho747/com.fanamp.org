@@ -1,79 +1,82 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="9" time="45.565">
-    <testcase classname="Login" name="We will Test Login Scenarios with wrong username formats" time="4.105">
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="8" time="66.678">
+    <testcase classname="Notifications" name="We will Test if counters are working properly for Title and Body" time="6.177">
         <system-out>
-            <![CDATA[Given User is at Login Page.................................................passed
-When User enters username as "a"............................................passed
-Then User gets a Validation Message for username............................passed
+            <![CDATA[Given User is at Notifications Page.........................................passed
+And counter values are set to default.......................................passed
+When User enters title as "a"...............................................passed
+Then title count is accurate................................................passed
+When User enters body as "This".............................................passed
+Then Body count is accurate.................................................passed
 ]]>
         </system-out>
     </testcase>
-    <testcase classname="Login" name="We will Test Login Scenarios with wrong username formats 2" time="5.789">
+    <testcase classname="Notifications" name="We will Test if counters are working properly for Title and Body 2" time="5.438">
         <system-out>
-            <![CDATA[Given User is at Login Page.................................................passed
-When User enters username as "a@bcg"........................................passed
-Then User gets a Validation Message for username............................passed
+            <![CDATA[Given User is at Notifications Page.........................................passed
+And counter values are set to default.......................................passed
+When User enters title as "The title is"....................................passed
+Then title count is accurate................................................passed
+When User enters body as "This body is".....................................passed
+Then Body count is accurate.................................................passed
 ]]>
         </system-out>
     </testcase>
-    <testcase classname="Login" name="We will Test Login Scenarios with wrong username formats 3" time="5.174">
+    <testcase classname="Notifications" name="We will Test if counters are working properly for Title and Body 3" time="6.146">
         <system-out>
-            <![CDATA[Given User is at Login Page.................................................passed
-When User enters username as "@bc"..........................................passed
-Then User gets a Validation Message for username............................passed
+            <![CDATA[Given User is at Notifications Page.........................................passed
+And counter values are set to default.......................................passed
+When User enters title as "QA Test Notification"............................passed
+Then title count is accurate................................................passed
+When User enters body as "QA Test Notification".............................passed
+Then Body count is accurate.................................................passed
 ]]>
         </system-out>
     </testcase>
-    <testcase classname="Login" name="We will Test Login Scenarios with wrong username formats 4" time="4.419">
+    <testcase classname="Notifications" name="We will Test if Send button is disabled when screen loads" time="10.301">
         <system-out>
-            <![CDATA[Given User is at Login Page.................................................passed
-When User enters username as "ab.com".......................................passed
-Then User gets a Validation Message for username............................passed
+            <![CDATA[Given User is at Notifications Page.........................................passed
+When Title is blank.........................................................passed
+And Body Is blank...........................................................passed
+Then Send Button is disabled................................................passed
 ]]>
         </system-out>
     </testcase>
-    <testcase classname="Login" name="We will Test Login Scenarios with blank password" time="3.314">
+    <testcase classname="Notifications" name="We will Test if Send button is disabled when Title is Blank" time="8.879">
         <system-out>
-            <![CDATA[Given User is at Login Page.................................................passed
-When User enters username as "test@chainsys.com"............................passed
-And User enters blank password..............................................passed
-Then User gets a Validation Message for password............................passed
+            <![CDATA[Given User is at Notifications Page.........................................passed
+When Title is blank.........................................................passed
+And Body Is not blank.......................................................passed
+Then Send Button is disabled................................................passed
 ]]>
         </system-out>
     </testcase>
-    <testcase classname="Login" name="We will Test Login Scenarios with blank password 2" time="3.84">
+    <testcase classname="Notifications" name="We will Test if Send button is disabled when Body is Blank" time="8.239">
         <system-out>
-            <![CDATA[Given User is at Login Page.................................................passed
-When User enters username as "test@"........................................passed
-And User enters blank password..............................................passed
-Then User gets a Validation Message for password............................passed
+            <![CDATA[Given User is at Notifications Page.........................................passed
+When Title is not blank.....................................................passed
+And Body Is blank...........................................................passed
+Then Send Button is disabled................................................passed
 ]]>
         </system-out>
     </testcase>
-    <testcase classname="Login" name="We will Test Login Scenarios with incorrect username and password" time="5.425">
+    <testcase classname="Notifications" name="We will Test if Send button is disabled when Confirmation field is Blank" time="12.824">
         <system-out>
-            <![CDATA[Given User is at Login Page.................................................passed
-When User enters username as "test@chainsys.com"............................passed
-And User enters password as "<Password>"....................................passed
-Then User should get a Toast notification...................................passed
+            <![CDATA[Given User is at Notifications Page.........................................passed
+When Title is not blank.....................................................passed
+And Body Is blank...........................................................passed
+Then Send Button is disabled................................................passed
 ]]>
         </system-out>
     </testcase>
-    <testcase classname="Login" name="We will Test Login Scenarios with incorrect username and password 2" time="5.996">
+    <testcase classname="Notifications" name="We will Test if Send button is enabled when Confirmation field is filled" time="7.091">
         <system-out>
-            <![CDATA[Given User is at Login Page.................................................passed
-When User enters username as "test10@chainsys.com"..........................passed
-And User enters password as "<Password>"....................................passed
-Then User should get a Toast notification...................................passed
-]]>
-        </system-out>
-    </testcase>
-    <testcase classname="Login" name="We will Test Login Scenarios with correct username and password" time="6.897">
-        <system-out>
-            <![CDATA[Given User is at Login Page.................................................passed
-When User enters username as "anirudho@auberginesolutions.com"..............passed
-And User enters password as "Gmail@2022"....................................passed
-Then User should be redirected to page with title "<Title>".................passed
+            <![CDATA[Given User is at Notifications Page.........................................passed
+When Title is not blank.....................................................passed
+And Body Is not blank.......................................................passed
+Then Send Button is disabled................................................passed
+When Confirmation field is updated..........................................passed
+Then Send Button is enabled.................................................passed
 ]]>
         </system-out>
     </testcase>

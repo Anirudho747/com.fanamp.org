@@ -33,4 +33,20 @@ public class LoginScreen {
     @FindBy(xpath="//*[text()='Error']")
     @CacheLookup
     protected WebElement toast;
+
+    @FindBy(xpath="//a[text()='Forgot Password ?']")
+    @CacheLookup
+    protected WebElement forgotPassword;
+
+    @FindBy(xpath="//input[@type='email']")
+    @CacheLookup
+    protected WebElement userNameForgotten;
+
+    @FindBy(xpath="//button[@type='submit']")
+    @CacheLookup
+    protected WebElement proceedButton;
+
+    @FindBy(xpath="//button[@type = 'button']")
+    @CacheLookup
+    protected WebElement passwordResetRequestedButton;
 }

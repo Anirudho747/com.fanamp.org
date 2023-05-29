@@ -52,4 +52,24 @@ public class LoginFlow extends LoginScreen {
     {
         return(toast.isDisplayed());
     }
+
+    public void clickForgotPassword()
+    {
+        forgotPassword.click();
+    }
+
+    public void enterEmail(String s)
+    {
+        userNameForgotten.sendKeys(s);
+    }
+
+    public void clickProceed()
+    {
+        proceedButton.click();
+    }
+
+    public boolean isEmailValid()
+    {
+        return (passwordResetRequestedButton.isDisplayed());
+    }
 }

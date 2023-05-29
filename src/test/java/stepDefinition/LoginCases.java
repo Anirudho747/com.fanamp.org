@@ -8,6 +8,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import io.cucumber.java.After;
+import org.testng.Assert;
 import util.DriverFactory;
 
 import java.time.Duration;
@@ -70,6 +71,35 @@ public class LoginCases {
         lf.tapLogin_withCorrectEmailFormat();
         System.out.println(driver.getTitle());
     }
+
+    @When("User taps Forgot Password")
+    public void user_taps_forgot_password() {
+            lf.clickForgotPassword();
+    }
+
+    @When("User enters email Address as {string}")
+    public void user_enters_email_address_as(String string) {
+            lf.enterEmail(string);
+    }
+
+    @When("hits the enter button")
+    public void hits_the_enter_button() {
+            lf.clickProceed();
+    }
+
+    @Then("User should be getting proper response")
+    public void user_should_be_getting_proper_response() {
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+        Assert.assertEquals(lf.isEmailValid(),true);
+    }
+
+    @Then("User should not be getting proper response")
+    public void user_should_not_be_getting_proper_response() {
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+        Assert.assertEquals(lf.isEmailValid(),false);
+    }
+
+
 
 //    @After(order=0)
 //    public void tearDown()
