@@ -2,15 +2,14 @@ package stepDefinition;
 
 
 import flow.LoginFlow;
+import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
-import io.cucumber.java.After;
 import org.testng.Assert;
 import util.DriverFactory;
-
 import java.time.Duration;
 
 
@@ -70,6 +69,7 @@ public class LoginCases {
     public void user_should_be_redirected_to_page_with_title(String string) {
         lf.tapLogin_withCorrectEmailFormat();
         System.out.println(driver.getTitle());
+        Assert.assertEquals("a","b");
     }
 
     @When("User taps Forgot Password")
@@ -101,10 +101,10 @@ public class LoginCases {
 
 
 
-//    @After(order=0)
-//    public void tearDown()
-//    {
-//        driver.close();
-//    }
+    @After(order=0)
+    public void tearDown()
+    {
+        driver.close();
+    }
 
     }

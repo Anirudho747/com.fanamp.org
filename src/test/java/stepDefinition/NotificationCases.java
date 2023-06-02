@@ -52,6 +52,7 @@ public class NotificationCases {
 
     @Then("title count is accurate")
     public void title_count_is_accurate() {
+        Assert.assertTrue(false);
         System.out.println(nf.getTitleCount());
     }
 
@@ -100,10 +101,10 @@ public class NotificationCases {
         Assert.assertFalse(nf.isSendDisabled());
     }
 
-//    @After(order=0)
-//    public void tearDown()
-//    {
-//        driver.close();
-//    }
+    @After(order=0)
+    public void tearDown()
+    {
+        driver.quit();
+    }
 
 }

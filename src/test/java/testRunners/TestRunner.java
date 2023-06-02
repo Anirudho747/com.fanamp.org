@@ -7,15 +7,16 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		//ideally for features we should just mention the folder name and control execution via tags, but we can mention individual file as well
-		        features = {"src/test/resources/features/Notification_Buttons.feature"},
+		        features = {"./src/test/resources/features"},
 				glue = {"stepDefinition"},
 		        plugin= {
 				"pretty",
+				"summary",
 				"html:html/Reports.html",
-				"json:json/Report.json",
 				"junit:junit/Report.xml",
+				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
 		         },
-//		         tags=" @ForgotPassword_InvalidEmailAddress",
+//		         tags="@NotificationCounterCheck",
 		         monochrome = false,
 		         dryRun = false,
 		         publish = true

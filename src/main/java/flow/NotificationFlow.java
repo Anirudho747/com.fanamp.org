@@ -4,6 +4,8 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import screen.NotificationScreen;
+
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 public class NotificationFlow extends NotificationScreen {
@@ -18,7 +20,7 @@ public class NotificationFlow extends NotificationScreen {
 
     public void moveToNotifications()
     {
-        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
         notifications.click();
     }
 

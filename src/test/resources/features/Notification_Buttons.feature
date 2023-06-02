@@ -1,7 +1,7 @@
 @Notification_Buttons
 Feature: Notifications
 
-
+@NotificationCounterCheck
   Scenario Outline: We will Test if counters are working properly for Title and Body
     Given User is at Notifications Page
     And counter values are set to default
@@ -16,7 +16,7 @@ Feature: Notifications
       |The title is     | This body is |
       |QA Test Notification       | QA Test Notification|
 
-
+  @Notification
   Scenario: We will Test if Send button is disabled when screen loads
     Given User is at Notifications Page
     When Title is blank

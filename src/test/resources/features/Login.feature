@@ -1,3 +1,4 @@
+@Login
 Feature: Login
 
   @NoLogin
@@ -70,4 +71,4 @@ Feature: Login
 
     Examples:
       |Username     |Password        |Title
-      |anirudho@auberginesolutions.com |Gmail@2023    |Title
+      |anirudho@auberginesolutions.com |Gmail@20231    |Title
