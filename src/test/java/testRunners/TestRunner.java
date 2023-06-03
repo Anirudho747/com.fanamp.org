@@ -7,7 +7,7 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		//ideally for features we should just mention the folder name and control execution via tags, but we can mention individual file as well
-		        features = {"./src/test/resources/features"},
+		        features = {"./src/test/resources/features/EventCreation.feature"},
 				glue = {"stepDefinition"},
 		        plugin= {
 				"pretty",
@@ -16,9 +16,9 @@ import io.cucumber.junit.CucumberOptions;
 				"junit:junit/Report.xml",
 				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
 		         },
-//		         tags="@NotificationCounterCheck",
+//		         tags="not @Login",
 		         monochrome = false,
-		         dryRun = false,
+		         dryRun = true,
 		         publish = true
 		         )
 public class TestRunner {

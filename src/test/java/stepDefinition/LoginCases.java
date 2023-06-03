@@ -48,7 +48,6 @@ public class LoginCases {
         lf.enterPassword("");
     }
 
-
     @Then("User gets a Validation Message for password")
     public void user_gets_a_validation_message_for_password() {
         lf.isBlankPasswordMsgPresent();
@@ -58,6 +57,7 @@ public class LoginCases {
     public void user_enters_password_as(String string) {
         lf.enterPassword(string);
     }
+
     @Then("User should get a Toast notification")
     public void user_should_get_a_toast_notification() {
         lf.tapLogin_withCorrectEmailFormat();
@@ -68,8 +68,8 @@ public class LoginCases {
     @Then("User should be redirected to page with title {string}")
     public void user_should_be_redirected_to_page_with_title(String string) {
         lf.tapLogin_withCorrectEmailFormat();
-        System.out.println(driver.getTitle());
-        Assert.assertEquals("a","b");
+        System.out.println("title is "+driver.getTitle());
+        Assert.assertEquals(driver.getTitle(),"Fanamp");
     }
 
     @When("User taps Forgot Password")
@@ -104,7 +104,7 @@ public class LoginCases {
     @After(order=0)
     public void tearDown()
     {
-        driver.close();
+        driver.quit();
     }
 
     }

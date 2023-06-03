@@ -1,7 +1,7 @@
 @Login
 Feature: Login
 
-  @NoLogin
+  @NoLogin @WrongUserName
   Scenario Outline: We will Test Login Scenarios with wrong username formats
     Given User is at Login Page
     When User enters username as "<Username>"
@@ -38,7 +38,7 @@ Feature: Login
       |test@chainsys.com |psswrd3
       |test10@chainsys.com |psswrd
 
-  @ForgotPassword_ValidEmailAddress
+  @ForgotPassword @ValidEmailAddress
   Scenario Outline: We will Test Validation messages in Forgot Password Screen
     Given User is at Login Page
     When User taps Forgot Password
@@ -50,7 +50,7 @@ Feature: Login
       |Email |
       |anirudho@auberginesolutions.com |
 
-  @ForgotPassword_InvalidEmailAddress
+  @ForgotPassword @InvalidEmailAddress
   Scenario Outline: We will Test Validation messages in Forgot Password Screen
     Given User is at Login Page
     When User taps Forgot Password
@@ -71,4 +71,4 @@ Feature: Login
 
     Examples:
       |Username     |Password        |Title
-      |anirudho@auberginesolutions.com |Gmail@20231    |Title
+      |anirudho@auberginesolutions.com |Gmail@2023    |Title
