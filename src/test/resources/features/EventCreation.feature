@@ -14,4 +14,4 @@ Scenario: We will save the Event details
  And picks Event Group
  And selects Category
  And taps on Save Button
- Then User gets a cconfirmatory Toast message
+ Then User gets a confirmatory Toast message

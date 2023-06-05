@@ -56,6 +56,7 @@ public class EventCreationCases {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
+
     @When("picks Event Group")
     public void picks_event_group() {
 
@@ -71,8 +72,8 @@ public class EventCreationCases {
 
     }
 
-    @Then("User gets a cconfirmatory Toast message")
-    public void user_gets_a_cconfirmatory_toast_message() {
+    @Then("User gets a confirmatory Toast message")
+    public void user_gets_a_confirmatory_toast_message() {
 
     }
 
