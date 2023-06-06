@@ -8,10 +8,10 @@ Scenario: We will save the Event details
  And Enters Description
  And sets visibility,priority
  And sets Event schedule
- And uploads Image
- And picks Symbol
- And picks Season
- And picks Event Group
- And selects Category
- And taps on Save Button
- Then User gets a confirmatory Toast message
+# And uploads Image
+# And picks Symbol
+# And picks Season
+# And picks Event Group
+# And selects Category
+# And taps on Save Button
+# Then User gets a confirmatory Toast message

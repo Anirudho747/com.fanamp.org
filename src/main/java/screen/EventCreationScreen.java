@@ -4,8 +4,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 
-public class EventCreationScreen {
+import util.Commons;
 
+public class EventCreationScreen {
+	
+	
     @FindBy(xpath="//*[text()='Create Event']")
     @CacheLookup
     protected WebElement createEvent;
@@ -42,7 +45,7 @@ public class EventCreationScreen {
     @CacheLookup
     protected WebElement imageUploader2;
 
-    @FindBy(xpath="(//button[@class='example-custom-input'])[1]")
+    @FindBy(xpath="//label[text()='Start Time']//following::button[1]")
     @CacheLookup
     protected WebElement startTime;
 
@@ -53,4 +56,10 @@ public class EventCreationScreen {
     @FindBy(xpath="(//button[@class='example-custom-input'])[3]")
     @CacheLookup
     protected WebElement actualStartTime;
+    
+    @FindBy(xpath="(//li[@class='react-datepicker__time-list-item '])[1]")
+    @CacheLookup
+    protected WebElement nextAvailableTime;
+    
+    
 }

@@ -1,21 +1,28 @@
 package flow;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import screen.EventCreationScreen;
+import util.Commons;
+
+import java.time.Duration;
 
 public class EventCreationFlow extends EventCreationScreen {
 
     public WebDriver driver;
+    Commons c;
 
-    public EventCreationFlow()
+    public EventCreationFlow(WebDriver driver)
     {
         this.driver = driver;
         PageFactory.initElements(driver,this);
+        c = new Commons();
     }
 
     public void tapCreateEvent()
     {
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
         createEvent.click();
     }
 
@@ -37,10 +44,54 @@ public class EventCreationFlow extends EventCreationScreen {
         eventDesc.sendKeys("QA Automation Event");
     }
 
-    public void makeEventPriority()
+    public void makeEventVisible()
     {
-        eventVisibility.click();
+//        eventVisibility.click();
     }
 
-
+    public void selectEventStartDate()
+    {
+ //       driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(16));
+        c.scrollDownSlightly();
+        c.isElementClickable(startTime);
+        startTime.click();
+    	
+    	//*[contains(@aria-label,'June 6')]
+    	String locator1 = "//*[contains(@aria-label,'";
+    	String startDate = c.getStartDate();
+    	String locator2 = "')]";
+    	driver.findElement(By.xpath(locator1+startDate+locator2)).click();
+    	nextAvailableTime.click();
+    }
+    
+    public void selectEventEndDate()
+    {
+        c.scrollDownSlightly();
+        c.scrollDownSlightly();
+        c.isElementClickable(endTime);
+    	endTime.click();
+    	
+    	//*[contains(@aria-label,'June 6')]
+    	String locator1 = "//*[contains(@aria-label,'";
+    	String endDate = c.getEndDate();
+    	String locator2 = "')]";
+    	driver.findElement(By.xpath(locator1+endDate+locator2)).click();
+    	nextAvailableTime.click();
+    }
+    
+    public void selectActualStartDate()
+    {
+        c.scrollDownSlightly();
+        c.isElementClickable(actualStartTime);
+    	actualStartTime.click();
+    	
+    	//*[contains(@aria-label,'June 6')]
+    	String locator1 = "//*[contains(@aria-label,'";
+    	String actualStartDate = c.getActualStartDate();
+    	String locator2 = "')]";
+    	driver.findElement(By.xpath(locator1+actualStartDate+locator2)).click();
+    	nextAvailableTime.click();
+    }
+    
+    
 }

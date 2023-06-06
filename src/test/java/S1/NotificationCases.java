@@ -1,4 +1,4 @@
-package stepDefinition;
+package S1;
 
 import flow.LoginFlow;
 import flow.NotificationFlow;

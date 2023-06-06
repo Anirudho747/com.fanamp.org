@@ -1,44 +1,72 @@
-package stepDefinition;
+package EC;
 
+import flow.EventCreationFlow;
+import flow.LoginFlow;
+import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.WebDriver;
+import util.DriverFactory;
 
 public class EventCreationCases {
 
+    public EventCreationFlow eventCreationFlow;
+    public LoginFlow lf;
+    public DriverFactory df;
+    public WebDriver driver;
+
+    @Before(order=0)
+    public void setUp()
+    {
+        df = new DriverFactory();
+        driver = df.get_driver();
+        eventCreationFlow = new EventCreationFlow(driver);
+        lf = new LoginFlow(driver);
+
+        df.launchPage();
+        System.out.println(driver.getTitle());
+
+        lf.enterUserName("anirudho@auberginesolutions.com");
+        lf.enterPassword("Gmail@2023");
+        lf.tapLogin_withCorrectEmailFormat();
+    }
+
     @Given("User is at Event List screen")
     public void user_is_at_event_list_screen() {
-
+        //Assert Screen title here
     }
 
     @When("User taps on Create Event Button")
     public void user_taps_on_create_event_button() {
-
+        eventCreationFlow.tapCreateEvent();
     }
 
     @When("Enters Event Name")
     public void enters_event_name() {
-
+        eventCreationFlow.typeEventName();
     }
 
     @When("Enters Nickname")
     public void enters_nickname() {
-
+        eventCreationFlow.typeEventNickName();
     }
 
     @When("Enters Description")
     public void enters_description() {
-
+        eventCreationFlow.typeEventDesc();
     }
 
     @When("sets visibility,priority")
     public void sets_visibility_priority() {
-
+        eventCreationFlow.makeEventVisible();
     }
 
     @When("sets Event schedule")
     public void sets_event_schedule() {
-
+        eventCreationFlow.selectEventStartDate();
+        eventCreationFlow.selectEventEndDate();
+        eventCreationFlow.selectActualStartDate();
     }
 
     @When("uploads Image")
