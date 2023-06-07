@@ -2,6 +2,7 @@ package flow;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import screen.EventCreationScreen;
 import util.Commons;
@@ -51,7 +52,6 @@ public class EventCreationFlow extends EventCreationScreen {
 
     public void selectEventStartDate()
     {
- //       driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(16));
         c.scrollDownSlightly();
         c.isElementClickable(startTime);
         startTime.click();
@@ -61,14 +61,19 @@ public class EventCreationFlow extends EventCreationScreen {
     	String startDate = c.getStartDate();
     	String locator2 = "')]";
     	driver.findElement(By.xpath(locator1+startDate+locator2)).click();
-    	nextAvailableTime.click();
+    	nextAvailableStartTime.click();
     }
     
     public void selectEventEndDate()
     {
-        c.scrollDownSlightly();
-        c.scrollDownSlightly();
-        c.isElementClickable(endTime);
+        try {
+            Thread.sleep(13000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        c.scrollDownTillElement(colorPicker);
+        c.scrollDownToBottom();
     	endTime.click();
     	
     	//*[contains(@aria-label,'June 6')]
@@ -76,12 +81,12 @@ public class EventCreationFlow extends EventCreationScreen {
     	String endDate = c.getEndDate();
     	String locator2 = "')]";
     	driver.findElement(By.xpath(locator1+endDate+locator2)).click();
-    	nextAvailableTime.click();
+     	nextAvailableEndTime.click();
     }
     
     public void selectActualStartDate()
     {
-        c.scrollDownSlightly();
+        c.scrollDownVerySlightly();
         c.isElementClickable(actualStartTime);
     	actualStartTime.click();
     	
@@ -90,7 +95,7 @@ public class EventCreationFlow extends EventCreationScreen {
     	String actualStartDate = c.getActualStartDate();
     	String locator2 = "')]";
     	driver.findElement(By.xpath(locator1+actualStartDate+locator2)).click();
-    	nextAvailableTime.click();
+    	nextAvailableActualStartTime.click();
     }
     
     

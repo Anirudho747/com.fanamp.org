@@ -1,9 +1,7 @@
 package util;
 
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.StaleElementReferenceException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -19,6 +17,7 @@ public class Commons {
     WebDriver driver = df.get_driver();
     JavascriptExecutor js = (JavascriptExecutor) driver;
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(52));
+    Actions actions = new Actions(driver);
 
     public String getStartDate()
     {
@@ -69,18 +68,24 @@ public class Commons {
 
     public void scrollDownToBottom()
     {
-        js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+        actions.keyDown(Keys.CONTROL).sendKeys(Keys.END).perform();
     }
 
     public void scrollDownTillElement(WebElement element)
     {
-         js.executeScript("arguments[0].scrollIntoView();", element);
+        element.sendKeys(Keys.PAGE_DOWN);
     }
 
     public void scrollDownSlightly()
     {
-        js.executeScript("window.scrollBy(0,240)", "");
+        js.executeScript("window.scrollBy(0,480)", "");
     }
+
+    public void scrollDownVerySlightly()
+    {
+        js.executeScript("window.scrollBy(10,200)", "");
+    }
+
 
     public void refreshForStaleness(WebElement element)
     {

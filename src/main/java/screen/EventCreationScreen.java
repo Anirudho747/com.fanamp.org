@@ -49,17 +49,27 @@ public class EventCreationScreen {
     @CacheLookup
     protected WebElement startTime;
 
-    @FindBy(xpath="(//button[@class='example-custom-input'])[2]")
+    @FindBy(xpath="//label[text()='End Time']//following::button[1]")
     @CacheLookup
     protected WebElement endTime;
 
-    @FindBy(xpath="(//button[@class='example-custom-input'])[3]")
+    @FindBy(xpath="//label[text()='Actual Event Time']//following::button[1]")
     @CacheLookup
     protected WebElement actualStartTime;
     
     @FindBy(xpath="(//li[@class='react-datepicker__time-list-item '])[1]")
     @CacheLookup
-    protected WebElement nextAvailableTime;
-    
-    
+    protected WebElement nextAvailableStartTime;
+
+    @FindBy(xpath="(//li[@class='react-datepicker__time-list-item '])[6]")
+    @CacheLookup
+    protected WebElement nextAvailableEndTime;
+
+    @FindBy(xpath="(//li[@class='react-datepicker__time-list-item '])[7]")
+    @CacheLookup
+    protected WebElement nextAvailableActualStartTime;
+
+    @FindBy(xpath="//input[@class='Color_Picker']")
+    @CacheLookup
+    protected WebElement colorPicker;
 }

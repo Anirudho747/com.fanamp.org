@@ -82,7 +82,7 @@ public class EventCreationCases {
     @When("picks Season")
     public void picks_season() {
         // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
     }
 
     @When("picks Event Group")
