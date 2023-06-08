@@ -12,13 +12,15 @@ import java.time.Duration;
 public class EventCreationFlow extends EventCreationScreen {
 
     public WebDriver driver;
-    Commons c;
+    Commons c= new Commons();
 
     public EventCreationFlow(WebDriver driver)
     {
+        System.out.println("Line 19 ");
         this.driver = driver;
+        System.out.println("Line 21 ");
         PageFactory.initElements(driver,this);
-        c = new Commons();
+        System.out.println("Line 23 ");
     }
 
     public void tapCreateEvent()

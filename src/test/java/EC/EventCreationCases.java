@@ -2,6 +2,7 @@ package EC;
 
 import flow.EventCreationFlow;
 import flow.LoginFlow;
+import flow.NotificationFlow;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -12,6 +13,7 @@ import util.DriverFactory;
 public class EventCreationCases {
 
     public EventCreationFlow eventCreationFlow;
+    public NotificationFlow nf;
     public LoginFlow lf;
     public DriverFactory df;
     public WebDriver driver;
@@ -19,10 +21,11 @@ public class EventCreationCases {
     @Before(order=0)
     public void setUp()
     {
-        df = new DriverFactory();
-        driver = df.get_driver();
-        eventCreationFlow = new EventCreationFlow(driver);
-        lf = new LoginFlow(driver);
+          df = new DriverFactory();
+          driver = df.getDriver();
+          lf = new LoginFlow(driver);
+
+          nf = new NotificationFlow(driver);
 
         df.launchPage();
         System.out.println(driver.getTitle());
@@ -39,6 +42,8 @@ public class EventCreationCases {
 
     @When("User taps on Create Event Button")
     public void user_taps_on_create_event_button() {
+        System.out.println("Line 45 ");
+        eventCreationFlow = new EventCreationFlow(driver);
         eventCreationFlow.tapCreateEvent();
     }
 

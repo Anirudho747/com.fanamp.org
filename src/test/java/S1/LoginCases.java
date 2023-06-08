@@ -23,7 +23,7 @@ public class LoginCases {
     public void setUp()
     {
         df = new DriverFactory();
-        driver = df.get_driver();
+        driver = df.getDriver();
         lf = new LoginFlow(driver);
     }
 

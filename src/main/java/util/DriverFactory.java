@@ -14,16 +14,13 @@ public class DriverFactory {
 	public WebDriver driver;
 	public ConfigReader cR;
 
-	public DriverFactory()
+
+	public WebDriver getDriver()
 	{
 		cR = new ConfigReader();
-	}
-
-	public WebDriver get_driver()
-	{
 		String browserName = cR.getBrowser();
 
-		System.out.println(browserName);
+		System.out.println("Line 23 "+browserName);
 		
 		if(browserName.equalsIgnoreCase("Mozilla"))
 		{
@@ -45,15 +42,14 @@ public class DriverFactory {
 		{
 			System.out.println("Please pass correct browser value");
 		}
-		
-		driver.manage().deleteAllCookies();
-		driver.manage().window().maximize();
 		return driver;
 	}
 
 	public void launchPage()
 	{
 		driver.get(cR.getURL());
+		driver.manage().deleteAllCookies();
+		driver.manage().window().maximize();
 	}
 	
 

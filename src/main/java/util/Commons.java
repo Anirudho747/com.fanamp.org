@@ -14,7 +14,7 @@ import java.util.Calendar;
 public class Commons {
 
     DriverFactory df = new DriverFactory();
-    WebDriver driver = df.get_driver();
+    WebDriver driver = df.getDriver();
     JavascriptExecutor js = (JavascriptExecutor) driver;
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(52));
     Actions actions = new Actions(driver);

@@ -22,7 +22,7 @@ public class NotificationCases {
     public void setUp()
     {
         df = new DriverFactory();
-        driver = df.get_driver();
+        driver = df.getDriver();
         nf = new NotificationFlow(driver);
         lf = new LoginFlow(driver);
 
