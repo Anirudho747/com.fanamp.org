@@ -72,4 +72,44 @@ public class EventCreationScreen {
     @FindBy(xpath="//input[@class='Color_Picker']")
     @CacheLookup
     protected WebElement colorPicker;
+
+    @FindBy(xpath="(//div[@class=' css-19bb58m'])[1]")
+    @CacheLookup
+    protected WebElement symbolButton;
+
+    @FindBy(xpath="//*[text()='Practice']")
+    @CacheLookup
+    protected WebElement practiceSymbol;
+
+    @FindBy(xpath="(//div[@class=' css-19bb58m'])[2]")
+    @CacheLookup
+    protected WebElement seasonButton;
+
+    @FindBy(xpath="//*[text()='2022-23 [Formula 1]']")
+    @CacheLookup
+    protected WebElement formula1Symbol;
+
+    @FindBy(xpath="(//div[@class=' css-19bb58m'])[3]")
+    @CacheLookup
+    protected WebElement eventGroupButton;
+
+    @FindBy(xpath="//*[text()='Australian Prix']")
+    @CacheLookup
+    protected WebElement autralianPrix;
+
+    @FindBy(xpath="(//div[@class='flex-grow-1'])[2]")
+    @CacheLookup
+    protected WebElement categoryFormula1;
+
+    @FindBy(xpath="//button[@type='submit' and text()='Save']")
+    @CacheLookup
+    protected WebElement saveButton;
+
+    @FindBy(xpath="//button[@type='submit' and text()='Next']")
+    @CacheLookup
+    protected WebElement nextButton;
+
+    @FindBy(xpath="//button[@type='submit' and text()='Exit']")
+    @CacheLookup
+    protected WebElement exitButton;
 }

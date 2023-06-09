@@ -69,7 +69,7 @@ public class EventCreationFlow extends EventCreationScreen {
     public void selectEventEndDate()
     {
         try {
-            Thread.sleep(13000);
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -99,6 +99,42 @@ public class EventCreationFlow extends EventCreationScreen {
     	driver.findElement(By.xpath(locator1+actualStartDate+locator2)).click();
     	nextAvailableActualStartTime.click();
     }
-    
-    
+
+    public void imageUpload()
+    {
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void selectSymbol()
+    {
+       // c.selectByText(symbolDropDown,"Practice");
+        symbolButton.click();
+        practiceSymbol.click();
+    }
+
+    public void selectSeason()
+    {
+        seasonButton.click();
+        formula1Symbol.click();
+    }
+
+    public void selectEventGroup()
+    {
+        eventGroupButton.click();
+        autralianPrix.click();
+    }
+
+    public void selectCategory()
+    {
+        categoryFormula1.click();
+    }
+
+    public void saveDetails()
+    {
+        saveButton.click();
+    }
 }

@@ -76,33 +76,32 @@ public class EventCreationCases {
 
     @When("uploads Image")
     public void uploads_image() {
-
+        eventCreationFlow.imageUpload();
     }
 
     @When("picks Symbol")
     public void picks_symbol() {
-
+        eventCreationFlow.selectSymbol();
     }
 
     @When("picks Season")
     public void picks_season() {
-        // Write code here that turns the phrase above into concrete actions
-
+        eventCreationFlow.selectSeason();
     }
 
     @When("picks Event Group")
     public void picks_event_group() {
-
+        eventCreationFlow.selectEventGroup();
     }
 
     @When("selects Category")
     public void selects_category() {
-
+        eventCreationFlow.selectCategory();
     }
 
     @When("taps on Save Button")
     public void taps_on_save_button() {
-
+        eventCreationFlow.saveDetails();
     }
 
     @Then("User gets a confirmatory Toast message")

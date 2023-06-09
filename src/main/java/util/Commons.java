@@ -3,8 +3,8 @@ package util;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
@@ -18,6 +18,7 @@ public class Commons {
     JavascriptExecutor js = (JavascriptExecutor) driver;
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(52));
     Actions actions = new Actions(driver);
+    Select s;
 
     public String getStartDate()
     {
@@ -95,5 +96,23 @@ public class Commons {
     public void isElementClickable(WebElement element)
     {
         wait.until(ExpectedConditions.elementToBeClickable(element));
+    }
+
+    public void selectByIndex(WebElement element,int index)
+    {
+        s = new Select(element);
+        s.selectByIndex(index);
+    }
+
+    public void selectByValue(WebElement element,String val)
+    {
+        s = new Select(element);
+        s.selectByValue(val);
+    }
+
+    public void selectByText(WebElement element,String txt)
+    {
+        s = new Select(element);
+        s.selectByVisibleText(txt);
     }
 }
