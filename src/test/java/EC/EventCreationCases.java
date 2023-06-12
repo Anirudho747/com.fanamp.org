@@ -24,26 +24,21 @@ public class EventCreationCases {
           df = new DriverFactory();
           driver = df.getDriver();
           lf = new LoginFlow(driver);
-
           nf = new NotificationFlow(driver);
+          eventCreationFlow = new EventCreationFlow(driver);
+    }
 
+    @Given("User is at Event List screen")
+    public void user_is_at_event_list_screen() {
         df.launchPage();
         System.out.println(driver.getTitle());
-
         lf.enterUserName("anirudho@auberginesolutions.com");
         lf.enterPassword("Gmail@2023");
         lf.tapLogin_withCorrectEmailFormat();
     }
 
-    @Given("User is at Event List screen")
-    public void user_is_at_event_list_screen() {
-        //Assert Screen title here
-    }
-
     @When("User taps on Create Event Button")
     public void user_taps_on_create_event_button() {
-        System.out.println("Line 45 ");
-        eventCreationFlow = new EventCreationFlow(driver);
         eventCreationFlow.tapCreateEvent();
     }
 

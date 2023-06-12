@@ -19,8 +19,6 @@ public class DriverFactory {
 	{
 		cR = new ConfigReader();
 		String browserName = cR.getBrowser();
-
-		System.out.println("Line 23 "+browserName);
 		
 		if(browserName.equalsIgnoreCase("Mozilla"))
 		{

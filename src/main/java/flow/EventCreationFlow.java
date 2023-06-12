@@ -16,11 +16,8 @@ public class EventCreationFlow extends EventCreationScreen {
 
     public EventCreationFlow(WebDriver driver)
     {
-        System.out.println("Line 19 ");
         this.driver = driver;
-        System.out.println("Line 21 ");
         PageFactory.initElements(driver,this);
-        System.out.println("Line 23 ");
     }
 
     public void tapCreateEvent()
@@ -68,14 +65,14 @@ public class EventCreationFlow extends EventCreationScreen {
     
     public void selectEventEndDate()
     {
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            Thread.sleep(3000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
 
-        c.scrollDownTillElement(colorPicker);
-        c.scrollDownToBottom();
+        c.scrollDownTillElement(endTime);
+        c.isElementClickable(endTime);
     	endTime.click();
     	
     	//*[contains(@aria-label,'June 6')]
@@ -88,7 +85,6 @@ public class EventCreationFlow extends EventCreationScreen {
     
     public void selectActualStartDate()
     {
-        c.scrollDownVerySlightly();
         c.isElementClickable(actualStartTime);
     	actualStartTime.click();
     	
@@ -135,6 +131,24 @@ public class EventCreationFlow extends EventCreationScreen {
 
     public void saveDetails()
     {
-        saveButton.click();
+
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+          c.isElementClickable(saveButton);
+          c.scrollDownSlightly();
+
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+         c.scrollDownVerySlightly();
+         saveButton.click();
+
     }
 }

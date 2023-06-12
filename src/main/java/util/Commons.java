@@ -17,7 +17,6 @@ public class Commons {
     WebDriver driver = df.getDriver();
     JavascriptExecutor js = (JavascriptExecutor) driver;
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(52));
-    Actions actions = new Actions(driver);
     Select s;
 
     public String getStartDate()
@@ -65,11 +64,9 @@ public class Commons {
         return prt3;
     }
 
-
-
     public void scrollDownToBottom()
     {
-        actions.keyDown(Keys.CONTROL).sendKeys(Keys.END).perform();
+        js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
     }
 
     public void scrollDownTillElement(WebElement element)
@@ -79,14 +76,13 @@ public class Commons {
 
     public void scrollDownSlightly()
     {
-        js.executeScript("window.scrollBy(0,480)", "");
+        js.executeScript("window.scrollBy(0,520)", "");
     }
 
     public void scrollDownVerySlightly()
     {
-        js.executeScript("window.scrollBy(10,200)", "");
+        js.executeScript("window.scrollBy(0,5)", "");
     }
-
 
     public void refreshForStaleness(WebElement element)
     {
