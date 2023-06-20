@@ -10,6 +10,8 @@ import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Calendar;
 
+import static org.openqa.selenium.support.locators.RelativeLocator.with;
+
 
 public class Commons {
 
@@ -110,5 +112,10 @@ public class Commons {
     {
         s = new Select(element);
         s.selectByVisibleText(txt);
+    }
+
+    public WebElement below(WebElement element)
+    {
+        return(driver.findElement(with(By.tagName("button")).below(element)));
     }
 }

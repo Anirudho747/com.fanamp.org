@@ -116,6 +116,7 @@ public class EventCreationFlow extends EventCreationScreen {
     {
         seasonButton.click();
         formula1Symbol.click();
+//        c.below(seasonButton).click();
     }
 
     public void selectEventGroup()
